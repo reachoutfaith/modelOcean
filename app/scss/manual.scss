@@ -1,0 +1,381 @@
+// -------------------------MANUAL------------------ //
+
+.parallax__effect {
+	position: fixed;
+	width: 100%;
+	background: url('../image/contactBgTwo.jpeg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	top:0;
+	left:0;
+	z-index: -1;
+	
+}
+
+.manual {
+	padding: 3rem;
+	position: relative;
+	z-index: 1;
+
+	&__title {
+		@include Headline();
+		@include fontSet($desktopTitle,center);
+		color: #fff;
+		padding: 2rem;
+		margin: 1rem auto;
+		border-bottom: 1px dotted  #b2c1c696;
+		@include textShadow();
+		letter-spacing: .3rem;
+
+		&::after {
+			content: url('../image/arrowChanged.png');
+			width: 1rem;
+			height: 1rem;
+			position:absolute;
+			top: 8.7rem;
+			left: 47%;
+		}
+	}
+
+	&__subTitle {
+		@include Title();
+		@include fontSet($desktopSubTitle,center);
+		color: #fff;
+		padding: 2rem;
+		width: 50%;
+		margin: 2rem auto 0rem auto;
+		@include textShadow();
+		letter-spacing: .2rem;
+
+		.contact__link {
+			color: $textShadow;
+			text-shadow: none;
+			transition: all .3s ease;
+			text-decoration: none;
+
+			&:hover {
+				color: lighten($textShadow, 20%);
+			}
+		}
+	}
+
+	&__text{
+		display: block;
+		@include Light();
+		@include fontSet($desktopSubTitle,center);
+		color: $mainTitle;
+		padding: 1rem;
+		margin: 0rem auto;
+		letter-spacing: .2rem;
+	}
+
+	.form--error {
+		display: block;
+		@include Bold();
+		@include fontSet(1.8rem,center);
+		margin: 0rem auto 3rem auto;
+		letter-spacing: .1rem;
+		color: #ef5350;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		margin: 2rem auto;
+		width: 50%;
+
+		&-input {
+			@include Text();
+			@include fontSet($desktopText,left);
+			color: $mainHeadline;
+			padding: 1.5rem 1rem;
+			border-radius: .4rem;
+			background: #eee;
+			outline: none;
+			width: 90%;
+			border: 1px solid #d9d9d9;
+			margin: 0rem auto;
+			box-shadow: 3px 3px 15px 0px darken(#38425B,10%);
+		}
+
+		&-button {
+			display: block;
+			padding: 2rem 4rem;
+			border-radius: .5rem;
+			background-color: $textShadow;
+			margin: 2rem auto;
+			@include Light();
+			@include fontSet($desktopText, center);
+			border:none;
+			outline: none;
+			border-bottom: 6px solid darken(#348E94, 5%);
+			color: #fff;
+			letter-spacing: .2rem;
+			transition: all .3s ease;
+			box-shadow: 2px 2px 7px 0px #3c3c3ca8;
+
+			&:hover {
+				transform: translateY(-1px);
+				opacity: .8;
+				box-shadow: 2px 6px 10px 0px #3c3c3ca8;
+			}
+		}
+	}
+
+	&__trial {
+		display: flex;
+		flex-direction: column;
+		margin: 2rem auto;
+		width: 50%;
+		
+		.trialAccess__text {
+			@include Title();
+			@include fontSet(1.8rem,center);
+			color: #fff;
+			padding: 2rem;
+			@include textShadow();
+			letter-spacing: .2rem;
+		}
+
+		.trialAccess__link {
+			display: block;
+			width: 20%;
+			padding: 2rem 4rem;
+			border-radius: .5rem;
+			background-color: $textShadow;
+			margin: 2rem auto;
+			@include Light();
+			@include fontSet($desktopText, center);
+			border:none;
+			outline: none;
+			border-bottom: 6px solid darken(#348E94, 5%);
+			color: #fff;
+			text-decoration: none;
+			letter-spacing: .2rem;
+			transition: all .3s ease;
+			box-shadow: 2px 2px 7px 0px #3c3c3ca8;
+
+			&:hover {
+				transform: translateY(-1px);
+				opacity: .8;
+				box-shadow: 2px 6px 10px 0px #3c3c3ca8;
+			}
+		}
+	}
+}
+
+
+//Mediaqueries
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.manual {
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				top: 9.7rem;
+				left: 45%;
+			}
+		}
+
+		&__subTitle {
+			width: 70%;
+			padding: 1rem;
+			margin: 0rem auto;
+		}
+
+		&__text {
+			margin: 1rem auto 0rem auto;
+		}
+
+		&__form {
+			width: 60%;
+
+			&-button {
+				padding: 1.5rem 4rem;
+				margin: 2rem auto;
+			}
+		}
+
+		&__trial {
+			width: 100%;
+
+			.trialAccess__text{
+				padding: 0rem;
+				margin: 1rem auto;
+			}
+
+			.trialAccess__link {
+				padding: 1.5rem 4rem;
+				width: 20%;
+			}
+
+		}
+	}
+}
+
+
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.manual {
+		padding: 2rem;
+		&__title {
+			margin: 1rem auto;
+
+			&::after {
+				top: 7.7rem;
+				left: 45%;
+			}
+		}
+
+		&__subTitle {
+			width: 80%;
+			margin: 1rem auto;
+		}
+
+		&__text {
+			margin: 1rem auto 0rem auto;
+		}
+
+		&__form {
+			width: 60%;
+
+			&-button {
+				padding: 1.5rem 4rem;
+				margin: 3rem auto;
+			}
+		}
+
+		&__trial {
+			width: 80%;
+
+			.trialAccess__text{
+				margin: 1rem auto;
+				padding: 0rem;
+			}
+
+			.trialAccess__link {
+				padding: 1.5rem 4rem;
+				width: 25%;
+			}
+
+		}
+	}
+}
+
+
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.manual {
+		padding: 2rem;
+		&__title {
+			margin: 1rem auto;
+			font-size: $laptopTitle;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__subTitle {
+			width: 80%;
+			margin: 1rem auto;
+			padding: 1rem;
+			font-size: $laptopSubTitle;
+		}
+
+		&__text {
+			margin: 1rem auto 0rem auto;
+			font-size: $laptopText;
+		}
+
+		.form--error {
+			font-size: 2rem;
+		}
+
+		&__form {
+			width: 80%;
+
+
+			&-button {
+				padding: 1.5rem 4rem;
+				margin: 2rem auto ;
+			}
+		}
+
+		&__trial {
+			width: 100%;
+
+			.trialAccess__text{
+				margin: 0rem auto;
+				padding: 0rem;
+			}
+
+			.trialAccess__link {
+				padding: 1.5rem 4rem;
+				width: 30%;
+			}
+
+		}
+	}
+}
+
+@media screen and (max-width: 449px){
+	.manual {
+		padding: 2rem;
+		&__title {
+			margin: 2rem auto;
+			font-size: $laptopTitle;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__subTitle {
+			width: 80%;
+			margin: 0rem auto;
+			padding: 1rem;
+			font-size: $laptopSubTitle;
+		}
+
+		&__text {
+			margin: 1rem auto 0rem auto;
+			padding: 1rem;
+			font-size: $laptopText;
+		}
+
+
+		.form--error {
+			font-size: 2rem;
+		}
+
+		
+		&__form {
+			width: 100%;
+
+
+			&-button {
+				padding: 1.5rem 4rem;
+				margin: 2rem auto 0rem auto;
+			}
+		}
+
+		&__trial {
+			width: 100%;
+			padding: 0rem;
+
+			.trialAccess__text{
+				margin: 0rem auto;
+			}
+
+			.trialAccess__link {
+				padding: 1.5rem 4rem;
+				width: 30%;
+			}
+
+		}
+	}
+}

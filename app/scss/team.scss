@@ -1,0 +1,388 @@
+// -------------------------TEAM------------------ //
+
+.parallax__image {
+	position: fixed;
+	width: 100%;
+	background: url('../image/bgThree.jpeg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	top:0;
+	left:0;
+	z-index: -1;
+	
+}
+	
+
+.team {
+	padding: 3rem;
+	position: relative;
+	z-index: 1;
+	
+
+	&__title {
+		@include Headline();
+		@include fontSet($desktopTitle,center);
+		color: #fff;
+		padding: 2rem;
+		width: 90%;
+		margin: 0rem auto 3rem auto;
+		border-bottom: 1px dotted  #b2c1c696;
+		@include textShadow();
+		letter-spacing: .3rem;
+		
+
+		&::after {
+			content: url('../image/arrowChanged.png');
+			width: 1rem;
+			height: 1rem;
+			position:absolute;
+			top: 7.7rem;
+			left: 48%;
+		}
+	}
+	&__box {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		position: relative;
+		z-index: 1;
+
+		.team__card {
+			display: flex;
+			width: 90%;
+			padding: 1rem;
+			margin: 3rem auto;
+			transition: all .3 ease;
+
+			&:nth-child(odd) {
+				flex-direction: row;
+
+			}
+
+			&:nth-child(even){
+				flex-direction: row-reverse;
+
+				.team__card-info {
+					.worker__name,
+					.worker__position,
+					.worker__bio {
+						display: block;
+						text-align: right;
+					}
+				}
+			}	
+
+
+			&-photo {
+				height: 200px;
+				border-radius: .3rem;
+				align-self: center;
+				box-shadow: 3px 3px 9px 0px #75757570;
+				
+			}
+
+			&-info {
+				list-style-type: none;
+				margin: 0rem 2rem;
+				align-self: center;
+				background: $cardsBg;
+				border-radius: .4rem;
+				padding: 3rem;
+				flex-basis: 80%;
+				box-shadow: 3px 3px 15px 0px darken(#38425B,10%);
+
+				.card-info__item {
+					
+
+					.worker__name {
+						display: block;
+						@include Bold();
+						@include fontSet($desktopWorkerName, left);
+						color: $mainHeadline;
+						letter-spacing: .3rem;
+						margin-bottom: 1rem;
+					}
+
+					.worker__position {
+						display: block;
+						@include Title();
+						@include fontSet($desktopWorkerPos, left);
+						color: $mainTitle ;
+						letter-spacing: .2rem;
+						margin-bottom: 1rem;
+					}
+
+					.worker__bio{
+						@include Text();
+						@include fontSet($desktopWorkerText,left);
+						color: $mainHeadline;
+						border-top: 1px solid $titleBorderBottom;
+						letter-spacing: .1rem;
+						margin: 2rem 0;
+						padding: 1rem 0rem;
+
+							&-link {
+							@include Title();
+							@include fontSet($desktopWorkerText, left);
+							color: $textShadow;
+							margin-left: 1rem;
+							
+							
+						}
+
+
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+//Mediaqueries
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.team {
+
+		&__title {
+			&::after {
+				left: 45%;
+			}
+		}
+
+		&__box {
+			.team__card {
+				&-photo {
+					height: 150px;
+				}
+
+				&-info {
+					padding: 2.5rem;
+				}
+			}
+		}
+	}
+
+}
+
+
+
+
+@media (min-width: 550px) and (max-width: 767px) {
+			.team {
+
+				&__title {
+					font-size: $laptopTitle;
+
+					&::after {
+						left: 45%;
+						top: 8rem;
+					}
+				}
+
+				&__box {
+					.team__card {
+						width: 90%;
+						margin-top: 0rem;
+
+						&:nth-child(odd) {
+							flex-direction: column;
+						}
+
+						&:nth-child(even){
+							flex-direction: column;
+
+							.team__card-info {
+								.worker__name,
+								.worker__position {
+									text-align: center;
+								}
+								.worker__bio {
+									text-align: left;
+									}
+							}
+						}
+
+						&-photo {
+							height: 200px;
+						}
+
+						&-info {
+							padding: 2rem;
+							margin: 2rem auto;
+
+							.card-info__item {
+
+								.worker__name {
+									font-size: $laptopWorkerName;
+									text-align: center;
+								}
+
+								.worker__position {
+									font-size: $laptopWorkerPos;
+									text-align: center;
+								}
+
+								.worker__bio {
+									font-size: $laptopWorkerText;
+									text-align: left;
+
+									&-link {
+										font-size: $laptopWorkerText;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+}
+
+
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.team {
+		padding: 1.5rem 2rem;
+
+		&__title {
+			font-size: $laptopTitle;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__box {
+			.team__card {
+				width: 100%;
+				margin-top: 0rem;
+
+				&:nth-child(odd) {
+					flex-direction: column;
+				}
+
+				&:nth-child(even){
+					flex-direction: column;
+
+					.team__card-info {
+						.worker__name,
+						.worker__position {
+							text-align: center;
+						}
+						.worker__bio {
+							text-align: left;
+							}
+					}
+				}
+
+				&-photo {
+					height: 200px;
+				}
+
+				&-info {
+					padding: 2rem 1rem;
+					margin: 2rem auto;
+
+					.card-info__item {
+
+						.worker__name {
+							font-size: $laptopWorkerName;
+							text-align: center;
+						}
+
+						.worker__position {
+							font-size: $laptopWorkerPos;
+							text-align: center;
+						}
+
+						.worker__bio {
+							font-size: $laptopWorkerText;
+							text-align: left;
+
+							&-link {
+								font-size: $laptopWorkerText;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 449px){
+			.team {
+				padding: 1.5rem 2rem;
+
+				&__title {
+					margin-top: 2rem;
+					font-size: $mobileTitle;
+
+					&::after {
+						content: none;
+					}
+				}
+
+				&__box {
+					.team__card {
+						width: 100%;
+						margin-top: 0rem;
+
+						&:nth-child(odd) {
+							flex-direction: column;
+						}
+
+						&:nth-child(even){
+							flex-direction: column;
+
+							.team__card-info {
+								.worker__name,
+								.worker__position {
+									text-align: center;
+								}
+								.worker__bio {
+									text-align: left;
+									}
+							}
+						}
+
+						&-photo {
+							height: 200px;
+						}
+
+						&-info {
+							padding: 2rem 1rem;
+							margin: 2rem auto;
+
+							.card-info__item {
+
+								.worker__name {
+									font-size: $mobileWorkerName;
+									text-align: center;
+								}
+
+								.worker__position {
+									font-size: $mobileWorkerPos;
+									text-align: center;
+								}
+
+								.worker__bio {
+									font-size: $mobileWorkerText;
+									text-align: left;
+
+									&-link {
+										font-size: $mobileWorkerText;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+}

@@ -1,0 +1,332 @@
+// -------------------------CONTACT------------------ //
+
+.parallax__effect {
+	position: fixed;
+	width: 100%;
+	background: url('../image/contactBgTwo.jpeg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	top:0;
+	left:0;
+	z-index: -1;
+	
+}
+
+.contact {
+	padding: 3rem;
+	position: relative;
+	z-index: 1;
+
+	&__title {
+		@include Headline();
+		@include fontSet($desktopTitle,center);
+		color: #fff;
+		padding: 2rem;
+		margin: 3rem auto;
+		border-bottom: 1px dotted  #b2c1c696;
+		@include textShadow();
+		letter-spacing: .3rem;
+
+		&::after {
+			content: url('../image/arrowChanged.png');
+			width: 1rem;
+			height: 1rem;
+			position:absolute;
+			top: 10.7rem;
+			left: 47%;
+		}
+	}
+
+	&__subTitle {
+		@include Title();
+		@include fontSet($desktopSubTitle,center);
+		color: #fff;
+		padding: 2rem;
+		width: 50%;
+		margin: 0rem auto 3rem auto;
+		@include textShadow();
+		letter-spacing: .2rem;
+
+		&--emphasized {
+			color: $textShadow;
+			text-shadow: none;
+			display: block;
+		}
+
+
+	}
+
+	.form--success {
+		display: flex;
+		justify-content: center;
+		margin: 2rem auto;
+		width: 40%;
+		background: #3fadb4;
+		border-radius: .3rem;
+		
+
+		.icon--success {
+			background: url('../image/success.svg');
+			display: block;
+			width: 6rem;
+			height: 6rem;
+			align-self: center;
+		}
+
+		.form__answer {
+			display: block;
+			@include Title();
+			@include fontSet(2rem,center);
+			color: #fff;
+			@include textShadow();
+			letter-spacing: .2rem;
+			padding: .5rem;
+			align-self: center;
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 2rem;
+		background: #fafafa;
+		border-radius: .4rem;
+		width: 55%;
+		margin: 2rem auto 6rem auto;
+		box-shadow: 3px 3px 15px 0px darken(#38425B,10%);
+		
+		&-name,
+		&-email,
+		&-theme,
+		&-text {
+			margin: 1rem 2rem;
+			@include Text();
+			@include fontSet($desktopText,left);
+			color: $mainHeadline;
+			padding: 1.5rem 1rem;
+			border-radius: .4rem;
+			background: #eee;
+			outline: none;
+			width: 95%;
+			box-sizing: border-box;
+			border: 1px solid #d9d9d9;
+		}
+
+
+		&-button{
+			display: block;
+			padding: 1.5rem 3rem;
+			border-radius: .5rem;
+			background-color: $textShadow;
+			margin: 2rem auto;
+			width: 30%;
+			@include Light();
+			@include fontSet($desktopText, center);
+			border:none;
+			outline: none;
+			border-bottom: 6px solid darken(#348E94, 5%);
+			color: #fff;
+			letter-spacing: .2rem;
+			transition: all .3s ease;
+			box-shadow: 2px 2px 7px 0px #3c3c3ca8;
+
+			&:hover {
+				transform: translateY(-1px);
+				opacity: .8;
+				box-shadow: 2px 6px 10px 0px #3c3c3ca8;
+			}
+		}
+
+	}
+}
+
+
+//Mediaqueries
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.contact {
+		padding: 1rem 2rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				top: 7.7rem;
+			}
+		}
+
+		&__subTitle {
+			width: 70%;
+		}
+
+		.form--success {
+			width: 50%;
+		}
+
+		&__form {
+			width: 70%;
+
+			&-button {
+				width: 40%;
+			}
+		}
+	}
+
+}
+
+
+
+@media (min-width: 636px) and (max-width: 767px) {
+	.contact {
+		padding: 0rem 2rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				top: 4.7rem;
+			}
+		}
+
+		&__subTitle {
+			width: 80%;
+		}
+
+		.form--success {
+			width: 60%;
+		}
+
+		&__form {
+			width: 80%;
+
+
+			&-button {
+				width: 45%;
+			}
+		}
+	}
+
+}
+
+
+@media (min-width: 550px) and (max-width: 635px) {
+		.contact {
+		padding: 0rem 2rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				top: 7.9rem;
+			}
+		}
+
+		&__subTitle {
+			width: 80%;
+		}
+
+		.form--success {
+			width: 80%;
+		}
+
+		&__form {
+			width: 80%;
+
+
+			&-button {
+				width: 45%;
+			}
+		}
+	}
+}
+
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.contact {
+		padding: 0rem 2rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__subTitle {
+			width: 95%;
+			font-size: $laptopSubTitle;
+		}
+
+		.form--success {
+			width: 95%;
+		}
+
+		&__form {
+			width: 95%;
+			padding: 2rem 0rem;
+
+
+			&-name,
+			&-email,
+			&-theme,
+			&-text {
+				width: 85%;
+				box-sizing: border-box;
+			}
+
+
+			&-button {
+				width: 45%;
+			}
+		}
+	}
+
+}
+
+@media screen and (max-width: 449px){
+	.contact {
+		padding:  2rem 1rem;
+
+		&__title {
+			margin: 2rem auto 1rem auto;
+			padding: 2.5rem 0rem;
+			
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__subTitle {
+			width: 95%;
+			padding: 1.5rem 0rem;
+			font-size: $laptopSubTitle;
+		}
+
+		.form--success {
+			width: 95%;
+		}
+
+		&__form {
+			width: 95%;
+			padding: 2rem 0rem;
+
+			&-name,
+			&-email,
+			&-theme,
+			&-text {
+				box-sizing: border-box;
+				width: 90%;
+			}
+
+
+			&-button {
+				width: 70%;
+			}
+		}
+	}
+
+}

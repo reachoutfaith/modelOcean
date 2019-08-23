@@ -1,0 +1,288 @@
+// -------------------------PROJECT------------------ //
+.parallax__image {
+	position: fixed;
+	width: 100%;
+	background: url('../image/bgThree.jpeg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	top:0;
+	left:0;
+	z-index: -1;
+	
+}
+
+.project {
+	padding: 3rem;
+	position: relative;
+	z-index: 1;
+	
+
+	&__title {
+		@include Headline();
+		@include fontSet($desktopTitle,center);
+		color: #fff;
+		padding: 2rem;
+		width: 90%;
+		margin: 0rem auto 3rem auto;
+		border-bottom: 1px dotted  #b2c1c696;
+		@include textShadow();
+		letter-spacing: .3rem;
+		
+
+		&::after {
+			content: url('../image/arrowChanged.png');
+			width: 1rem;
+			height: 1rem;
+			position:absolute;
+			top: 7.7rem;
+			left: 48%;
+		}
+	}
+
+	&__card{
+		display: flex;
+		flex-direction: column;
+		width: 80%;
+		padding: 2rem 1.5rem;
+		background: #fafafa;
+		border-radius: .4rem;
+		box-shadow: 3px 3px 15px 0px darken(#38425B,10%);
+		margin: 0rem auto 3rem auto;
+
+		&-title {
+			@include Title();
+			@include fontSet(2rem,center);
+			color: $mainHeadline;
+			padding: 2rem;
+			margin-bottom: 2rem;
+			letter-spacing: .3rem;
+			border-bottom: 1px solid #E0E0E0;
+		}
+
+		.science__card-slider {
+				
+
+				.slider__cell {
+					width: 100%;
+					background: $cardsBg;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+
+					.figure__box{
+						padding: 1rem;
+						text-align: center;
+
+						&-image {
+							border-radius: .4rem;
+							height: 400px;
+
+						}
+
+						&-caption {
+							@include Light();
+							@include fontSet(1.2rem,center);
+							color: $mainTitle;
+							letter-spacing: .2rem;
+						}
+					}
+				}
+
+
+				.flickity-prev-next-button {
+					  width: 40px;
+					  height: 40px;
+					}
+
+				.flickity-button {
+					background: #eee;
+				}
+
+				.flickity-button-icon {
+					  fill: $textShadow;	  
+				}
+			}
+
+			&-text {
+				@include Text();
+				@include fontSet($desktopText,left);
+				color: $mainHeadline;
+				padding: 2rem;
+				letter-spacing: .1rem;
+				margin: 2rem;
+			}
+	}
+}
+
+
+//Mediaqueries
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.project {
+		padding-top: 1.5rem;
+
+		&__title {
+			margin: 1rem auto 3rem auto;
+
+			&::after {
+				top: 7.2rem;
+			}
+		}
+
+		&__card {
+			width: 85%;
+			margin-bottom: 3rem;
+		}
+	}
+
+}
+
+
+
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.project {
+		padding-top: 1.5rem;
+
+		&__title {
+			margin: 1rem auto 3rem auto;
+
+			&::after {
+				top: 7.2rem;
+			}
+		}
+
+		&__card {
+			width: 90%;
+			margin-bottom: 3rem;
+
+			&-title{
+				font-size: 2rem;
+			}
+
+			.science__card-slider {
+
+					.slider__cell {
+						
+						.figure__box {
+
+							&-image{
+								height:350px;
+							}
+
+							&-caption {
+								font-size: 1.3rem;
+							}
+						}
+					}
+				}
+
+			&-text {
+				font-size: $laptopText;
+
+			}	
+		}
+	}
+}
+
+
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.project {
+		padding: 1.5rem 1rem;
+
+		&__title {
+			margin: 1rem auto 3rem auto;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__card {
+			margin-bottom: 3rem;
+			padding: 2rem 1rem;
+			width: 100%;
+			box-sizing: border-box;
+
+			&-title{
+				font-size: 2rem;
+			}
+
+			.science__card-slider {
+
+					.slider__cell {
+						
+
+						.figure__box {
+
+							&-image{
+								height: 300px;
+							}
+
+							&-caption {
+								font-size: 1.3rem;
+							}
+						}
+					}
+				}
+
+			&-text {
+				font-size: $laptopText;
+				padding: 0rem;
+				margin: 1rem;
+			}	
+		}
+	}
+}
+
+@media screen and (max-width: 449px){
+	.project {
+		padding: 1.5rem 1rem;
+
+		&__title {
+			margin: 2rem auto 3rem auto;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__card {
+			width: 100%;
+			box-sizing: border-box;
+			margin-bottom: 3rem;
+			padding: 2rem 1rem;
+
+			&-title{
+				font-size: 2rem;
+			}
+
+			.science__card-slider {
+
+					.slider__cell {
+						
+
+						.figure__box {
+
+							&-image{
+								height: 250px;
+							}
+
+							&-caption {
+								font-size: 1.4rem;
+							}
+						}
+					}
+				}
+
+			&-text {
+				font-size: $mobileText;
+				padding: 0rem;
+				margin: 1rem;
+			}	
+		}
+	}
+}

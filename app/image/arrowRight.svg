@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" >
+  
+<g class="shadow"><g fill="none" fill-rule="evenodd" stroke="none">
+    
+    <path fill="none" d="M32,16 C32,7.165 24.836,0 16,0 C7.164,0 0,7.164 0,16 C0,24.836 7.164,32 16,32 C24.836,32 32,24.835 32,16 Z M12.535,23.456 C11.789,22.71 11.789,21.503 12.535,20.757 L17.336,16.011 L12.535,11.265 C11.789,10.519 11.789,9.312 12.535,8.566 C13.289,7.824 14.508,7.82 15.262,8.566 L21.418,14.664 C22.164,15.406 22.164,16.617 21.418,17.362 L15.262,23.456 C14.508,24.202 13.289,24.202 12.535,23.456 Z" transform="translate(19 19)" stroke="none"></path>
+  </g></g><g class="clone"><g fill="none" fill-rule="evenodd" stroke="none" style="stroke-width: 2;" class="slider__main-fill slider__main-stroke">
+    
+    <path fill="none" d="M32,16 C32,7.165 24.836,0 16,0 C7.164,0 0,7.164 0,16 C0,24.836 7.164,32 16,32 C24.836,32 32,24.835 32,16 Z M12.535,23.456 C11.789,22.71 11.789,21.503 12.535,20.757 L17.336,16.011 L12.535,11.265 C11.789,10.519 11.789,9.312 12.535,8.566 C13.289,7.824 14.508,7.82 15.262,8.566 L21.418,14.664 C22.164,15.406 22.164,16.617 21.418,17.362 L15.262,23.456 C14.508,24.202 13.289,24.202 12.535,23.456 Z" transform="translate(19 19)" stroke="none" style="stroke-width: 2;" class="slider__main-fill slider__main-stroke"></path>
+  </g></g><g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="slider__secondary-fill">
+    
+    <path fill="none" d="M32,16 C32,7.165 24.836,0 16,0 C7.164,0 0,7.164 0,16 C0,24.836 7.164,32 16,32 C24.836,32 32,24.835 32,16 Z M12.535,23.456 C11.789,22.71 11.789,21.503 12.535,20.757 L17.336,16.011 L12.535,11.265 C11.789,10.519 11.789,9.312 12.535,8.566 C13.289,7.824 14.508,7.82 15.262,8.566 L21.418,14.664 C22.164,15.406 22.164,16.617 21.418,17.362 L15.262,23.456 C14.508,24.202 13.289,24.202 12.535,23.456 Z" transform="translate(19 19)" stroke="none" class="slider__secondary-fill"></path>
+  </g></g><style>
+          .slider__main-fill {fill: #eee;}
+          .slider__main-stroke {stroke: #eee;}
+          .slider__secondary-fill {fill: #fff;}
+        </style></svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 70 70" >
+<g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="arrow__main-stroke">
+    
+    <path fill="none" d="M0.566,3.265 C-0.18,2.519 -0.18,1.312 0.566,0.567 C1.32,-0.177 2.538,-0.179 3.292,0.567 L11.447,8.661 C12.193,9.406 12.193,10.614 11.447,11.36 L3.292,19.454 C2.538,20.199 1.32,20.199 0.566,19.454 C-0.18,18.708 -0.18,17.501 0.566,16.755 L7.365,10.011 L0.566,3.265 Z" transform="translate(28 24)" stroke="none" class="arrow__main-stroke"></path>
+  </g></g><style>
+          .arrow__main-stroke {stroke: #fff;}
+        </style></svg>

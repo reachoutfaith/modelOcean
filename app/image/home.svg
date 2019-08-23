@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70" style="width: 100%; height: 100%;"><desc>Made with illustrio</desc>
+  
+<g class="base"><g fill="none" fill-rule="evenodd" stroke="none" class="main-stroke">
+    
+    
+    <polygon fill="none" points="17.294 .149 0 17.443 5.353 17.443 5.353 29.796 13.176 29.796 13.176 17.443 21.412 17.443 21.412 29.796 29.235 29.796 29.235 17.443 34.588 17.443 29.235 12.09 29.235 5.502 22.647 5.502" transform="translate(17.706 20.027)" stroke="none" class="main-stroke"></polygon>
+  </g></g><style>
+          .main-fill {fill: #fff;}
+          .main-stroke {stroke: #fff;}
+          .secondary-fill {fill: #fff;}
+          .secondary-stroke {stroke: #fff;}
+
+          .main-fill--darken {fill: #d9d9d9;}
+          .main-stroke--darken {stroke: #d9d9d9;}
+          .secondary-fill--darken {fill: #d9d9d9;}
+          .secondary-stroke--darken {stroke: #d9d9d9;}
+
+          .main-fill--darkener {fill: #bfbfbf;}
+          .main-stroke--darkener {stroke: #bfbfbf;}
+          .secondary-fill--darkener {fill: #bfbfbf;}
+          .secondary-stroke--darkener {stroke: #bfbfbf;}
+        </style></svg>

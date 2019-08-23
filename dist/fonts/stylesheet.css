@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('EBGaramond-Medium.eot');
+    src: url('EBGaramond-Medium.eot?#iefix') format('embedded-opentype'),
+        url('EBGaramond-Medium.woff2') format('woff2'),
+        url('EBGaramond-Medium.woff') format('woff'),
+        url('EBGaramond-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('EBGaramond-SemiBold.eot');
+    src: url('EBGaramond-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('EBGaramond-SemiBold.woff2') format('woff2'),
+        url('EBGaramond-SemiBold.woff') format('woff'),
+        url('EBGaramond-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('EBGaramond-Bold.eot');
+    src: url('EBGaramond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('EBGaramond-Bold.woff2') format('woff2'),
+        url('EBGaramond-Bold.woff') format('woff'),
+        url('EBGaramond-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('FiraSans-Regular.eot');
+    src: url('FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('FiraSans-Regular.woff2') format('woff2'),
+        url('FiraSans-Regular.woff') format('woff'),
+        url('FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('RobotoSlab-Light.eot');
+    src: url('RobotoSlab-Light.eot?#iefix') format('embedded-opentype'),
+        url('RobotoSlab-Light.woff2') format('woff2'),
+        url('RobotoSlab-Light.woff') format('woff'),
+        url('RobotoSlab-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+

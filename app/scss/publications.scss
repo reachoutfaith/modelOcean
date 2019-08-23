@@ -1,0 +1,190 @@
+// -------------------------PUBLICATIONS------------------ //
+
+.parallax__effect {
+	position: fixed;
+	width: 100%;
+	background: url('../image/bgThree.jpeg') no-repeat;
+	background-size: cover;
+	height: 100vh;
+	top:0;
+	left:0;
+	z-index: -1;
+	
+}
+
+.papers {
+	padding: 3rem;
+	position: relative;
+	z-index: 1;
+
+
+	&__title {
+		@include Headline();
+		@include fontSet($desktopTitle,center);
+		color: #fff;
+		padding: 2rem;
+		margin: 3rem auto;
+		border-bottom: 1px dotted  #b2c1c696;
+		@include textShadow();
+		letter-spacing: .3rem;
+
+		&::after {
+			content: url('../image/arrowChanged.png');
+			width: 1rem;
+			height: 1rem;
+			position:absolute;
+			top: 10.7rem;
+			left: 47%;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		margin: 5rem auto;
+		width: 80%;
+		padding: 2rem;
+		background: #fafafa;
+		border-radius: .4rem;
+		padding-left: 5rem;
+		list-style-type: decimal;
+		font-size: 1.5rem;
+		box-shadow: 3px 3px 15px 0px darken(#38425B,10%);
+
+
+		&-item {
+			
+			.papers__name {
+				display: block;
+				@include Title();
+				@include fontSet($desktopSubTitle,left);
+				color: $mainHeadline;
+				padding: 1rem;
+				margin: 2rem 0rem;
+				@include textShadow();
+				letter-spacing: .2rem;
+				
+
+				.papers__link {
+					@include Title();
+					@include fontSet($desktopSubTitle,left);
+					color: #3fadb4;
+					@include textShadow();
+					letter-spacing: .1rem;
+					border-bottom: 1px solid transparent;
+					transition: all .3s ease;
+					text-decoration: none;
+
+						&:hover {
+						opacity: .8;
+						border-bottom: 1px solid #E0E0E0;
+					}
+				}
+
+
+				
+			}
+		}
+	}
+
+}
+
+
+//Mediaqueries
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+	.papers {
+		padding: 2rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				top: 8.7rem;
+			}
+		}
+	}
+}
+
+
+
+@media (min-width: 550px) and (max-width: 767px) {
+	.papers {
+		padding: 2rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				left: 45%;
+				top: 8.7rem;
+			}
+		}
+
+		&__list{
+			padding-left: 4rem;
+
+			&-item {
+				.papers__link {
+					margin: 1.5rem 0rem;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media (min-width: 450px) and (max-width: 549px) {
+	.papers {
+		padding: 1.5rem 1rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__list{
+			padding-left: 4rem;
+			width: 85%;
+
+			&-item {
+				.papers__link {
+					font-size: $laptopSubTitle;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 449px){
+	.papers {
+		padding: 1.5rem 1rem;
+
+		&__title {
+			margin: 2rem auto;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__list{
+			padding: 1.5rem;
+			padding-left: 3rem;
+			width: 85%;
+
+			&-item {
+				.papers__link {
+					font-size: $laptopSubTitle;
+					padding: 1.5rem 1rem;
+				}
+			}
+		}
+	}
+}

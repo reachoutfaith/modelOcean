@@ -1,0 +1,108 @@
+// Fonts
+@font-face {
+    font-family: 'Titillium Web';
+    src: url('../fonts/TitilliumWeb-Regular.eot');
+    src: url('../fonts/TitilliumWeb-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/TitilliumWeb-Regular.woff2') format('woff2'),
+        url('../fonts/TitilliumWeb-Regular.woff') format('woff'),
+        url('../fonts/TitilliumWeb-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond-Medium.eot');
+    src: url('../fonts/EBGaramond-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EBGaramond-Medium.woff2') format('woff2'),
+        url('../fonts/EBGaramond-Medium.woff') format('woff'),
+        url('../fonts/EBGaramond-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond-SemiBold.eot');
+    src: url('../fonts/EBGaramond-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EBGaramond-SemiBold.woff2') format('woff2'),
+        url('../fonts/EBGaramond-SemiBold.woff') format('woff'),
+        url('../fonts/EBGaramond-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond-Bold.eot');
+    src: url('../fonts/EBGaramond-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/EBGaramond-Bold.woff2') format('woff2'),
+        url('../fonts/EBGaramond-Bold.woff') format('woff'),
+        url('../fonts/EBGaramond-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira Sans';
+    src: url('../fonts/FiraSans-Regular.eot');
+    src: url('../fonts/FiraSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/FiraSans-Regular.woff2') format('woff2'),
+        url('../fonts/FiraSans-Regular.woff') format('woff'),
+        url('../fonts/FiraSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Slab';
+    src: url('../fonts/RobotoSlab-Light.eot');
+    src: url('../fonts/RobotoSlab-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/RobotoSlab-Light.woff2') format('woff2'),
+        url('../fonts/RobotoSlab-Light.woff') format('woff'),
+        url('../fonts/RobotoSlab-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+
+
+
+//Font mixins
+
+@mixin Text{
+    font-family: 'Fira Sans', sans-serif;
+	font-weight: 400;
+};
+
+@mixin Headline{
+   	font-family: 'EB Garamond', serif;
+	font-weight: 600;
+};
+
+@mixin Title{
+	font-family: 'EB Garamond', serif;
+	font-weight: 500;
+};
+
+@mixin Bold{
+   	font-family: 'EB Garamond', serif;
+	font-weight: 700;
+};
+
+@mixin Light{
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+};
+
+
+@mixin fontSet($size: 1rem, $align: left){
+	font-size: $size;
+	text-align: $align;
+};
+
+@mixin textShadow {
+    text-shadow: 1px 1px 2px #989898;
+};
+

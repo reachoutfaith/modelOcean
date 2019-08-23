@@ -1,0 +1,1366 @@
+//Default settings
+body,
+html {
+    font-size: 10px;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+@import "variables";
+@import "mixins";
+
+// -------------------------HOME------------------ //
+
+
+.header {
+	display: flex;
+	position: relative;
+
+
+	&__version{
+		display: flex;
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		border-radius: .5rem;
+		z-index: 5;
+
+		&--en,
+		&--ru {
+			display: block;
+			text-decoration: none;
+			@include Headline();
+			@include fontSet(1.5rem, center);
+			padding: 1rem;
+			background: $navLinkBg;
+			color: $mainHeadline;
+			border-bottom: 3px solid #96999A;
+			opacity: .3;
+			transition: all .3s ease;
+
+			&:hover{
+				background: #fafafa;
+				opacity: .9;
+			}
+
+		}
+		
+		.version--active {
+			background: #ddd;
+			opacity: .8;
+
+		}
+		
+	}
+	
+	.parallax {
+		background: url('../image/changed.jpg') no-repeat;
+		background-size: cover;
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		top:0;
+		left:0;
+		z-index: -1;
+	}
+
+
+	&__nav {
+		position: fixed;
+		top: 1rem;
+		right: 1rem;
+		z-index: 5;
+
+		&-icon {
+			text-align: right;
+			margin: 0rem auto;
+		}
+		
+
+		.nav__list {
+			list-style-type: none;
+			border-radius: .5px;
+
+			
+
+			&-item {
+				display: flex;
+				background: $navLinkBg;
+				margin: .4rem 0rem;
+				border-bottom: 1px solid #d9d9d9;
+				border-radius: .5rem;
+				box-shadow: 1px 1px 3px 0px #636363;
+				transition: all .3s ease;
+
+				.nav__list-icon {
+					svg {
+						width: 55px;
+						height: 55px;
+					}
+				}
+
+				.nav__list-link {
+					display: flex;
+					padding: .1rem;
+					text-decoration: none;
+
+					.nav__list-text {
+						display: none;
+						@include Text();
+						@include fontSet(1.5rem,left);
+						letter-spacing: .2rem;
+						color: $mainHeadline;
+						align-self: center;
+						transition: opacity .3s ease;
+					}
+
+				}
+
+				&:hover {
+					background: #eee;
+					border-radius: .5rem;
+				}
+			}
+		}
+	}
+}
+
+	.header__main {
+		display: flex;
+		flex-direction: column;
+		margin: 15rem auto auto auto;
+		z-index: 1;
+		height: 100vh;
+
+
+		.main__headline{
+			@include Headline();
+			@include fontSet(3rem, center);
+			color: $mainHeadline;
+			margin-bottom: 1.5rem;
+			letter-spacing: .2rem;
+
+		}
+
+		.main__title {
+			@include Title();
+			@include fontSet(2rem, center);
+			color: $mainTitle;
+			letter-spacing: .1rem;
+		}
+
+	}
+
+
+.tech {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	
+	&__icon{
+		margin: 0rem auto;
+
+	}
+
+	&__title {
+		@include Headline();
+		@include fontSet($desktopTitle, center);
+		color:  #FFF;
+		letter-spacing: .2rem;
+		padding-bottom: 2rem;
+		border-bottom: 1px dotted  #eee;
+		width: 40%;
+		margin: 0rem auto;
+		text-shadow: 1px 1px 3px $textShadow;
+		position: relative;
+
+			&::after {
+				content: url('../image/arrowChanged.png');
+				position:absolute;
+				top: 2.7rem;
+				left: 45%;
+			}
+		
+	}
+
+
+	&__table {
+		margin: 3rem auto;
+		width: 60%;
+
+		&-text{
+			@include Text();
+			@include fontSet($desktopText, left);
+			color: #fff;
+			padding: 1rem 2rem;
+			margin: 0rem auto 4rem auto;
+			@include textShadow();
+
+		}
+	}
+}
+
+.developments {
+	display: flex;
+	flex-direction: column;
+	padding: 4rem;
+	background: $couplerBg;
+	position: relative;
+	z-index: 1;
+	
+
+	&__item {
+		display: flex;
+		justify-content: space-around;
+		margin: 3rem 0rem;
+
+		&:nth-child(odd){
+			flex-direction: row;
+		}
+
+		&:nth-child(even){
+			flex-direction: row-reverse;
+		}
+
+		.developments__anim {
+			.main {
+				  width: 400px;
+				  height: 400px;
+				  display: flex;
+				  flex-direction: column;
+				  justify-content: space-between;
+
+					.box1,
+					.box3{
+						display: flex;
+						justify-content: center;
+
+						.air--animated {
+							animation-name: moveDown;
+							animation-duration: 3s;
+							animation-timing-function: linear;
+							animation-iteration-count: 1;
+							animation-fill-mode: forwards;
+
+						}
+
+						.ocean--animated {
+							animation-name: moveUp;
+							animation-duration: 3s;
+							animation-timing-function: linear;
+							animation-iteration-count: 1;
+							animation-fill-mode: forwards;
+						}
+
+						@keyframes moveDown {
+							0% { transform: translateY(0px);}
+							100% { transform: translateY(40px);}
+						}
+
+						@keyframes moveUp {
+							0% { transform: translateY(0px);}
+							100% { transform: translateY(-40px);}
+						}
+					}
+
+					.box2{
+						display: flex;
+						justify-content: space-between;
+
+						.ice--animated {
+							animation-name: moveRight;
+							animation-duration: 3s;
+							animation-timing-function: linear;
+							animation-iteration-count: 1;
+							animation-fill-mode: forwards;
+						}
+
+
+						.earth--animated {
+							animation-name: moveLeft;
+							animation-duration: 3s;
+							animation-timing-function: linear;
+							animation-iteration-count: 1;
+							animation-fill-mode: forwards; 
+							
+						}
+
+						@keyframes moveLeft {
+							0% { transform: translateX(0px);}
+							100% { transform: translateX(-40px);}
+						}
+
+
+						@keyframes moveRight {
+							0% { transform: translateX(0px);}
+							100% { transform: translateX(40px);}
+						}
+
+					}
+			}
+
+			.oceanModel__svg {
+				background: url('../image/oceanModelTwo.svg') no-repeat;
+				background-size: contain;
+			}
+
+			.dataSystem__svg {
+				background: url('../image/dataSystem.svg') no-repeat;
+				background-size: contain;
+			}
+
+			.lagrange__svg {
+				background: url('../image/lagrange.svg') no-repeat;
+				background-size: contain;
+			}
+		}
+
+		.developments__desc {
+			display: flex;
+			flex-direction: column;
+			width: 60%;
+			
+			.developments__icon {
+				margin: 0rem auto;
+
+			}
+
+			.developments__title {
+				@include Headline();
+				color: #fff;
+				@include fontSet($desktopTitle, center);
+				padding: 1rem;
+				margin-bottom: 3rem;
+				border-bottom: 1px dotted  #b2c1c696;
+				@include textShadow();
+				letter-spacing: .3rem;
+				position: relative;
+
+				&::after {
+					content: url('../image/arrowChanged.png');
+					width: 1rem;
+					height: 1rem;
+					position:absolute;
+					top: 2.7rem;
+					left: 46%;
+				}
+
+			}
+
+			.developments__list {
+				padding: 2rem;
+				list-style-type: none;
+
+
+				&-item {
+					display: flex;
+					
+					.list-item__text {
+						@include Text();
+						@include fontSet($desktopText, left);
+						color: #fff;
+						align-self: center;
+						@include textShadow();
+
+					}
+				}
+
+				.developments__button{
+					display: flex;
+					margin: 2rem auto;
+					padding: 1.5rem 2rem;
+					width: 30%;
+					border: 2px solid #eee;
+					transition: all .3s ease;
+					text-decoration: none;
+					border-radius: .5rem;
+
+					.button__text {
+						display: flex;
+						position: relative;
+						@include Light();
+						@include fontSet(1.7rem,center);
+						color: #fafafa;
+						margin: 0rem auto;
+						letter-spacing: .1rem;
+
+							&:after {
+							content: url('../image/btnArrow.svg');
+							width: 3rem;
+							height: 3rem;
+							display: block;
+							position: absolute;
+							left: 10rem;
+							bottom: 1.5rem;
+						}
+					}
+
+
+					&:hover {
+						background: rgba(255, 255, 255, .5);
+						border: 2px solid transparent;
+					}
+				}
+
+				@media (min-width: 940px) and (max-width: 1100px){
+					.developments__button{
+						width: 40%;
+					}	
+				}
+
+				@media (min-width: 840px) and (max-width: 939px){
+					.developments__button{
+						width: 50%;
+					}	
+				}
+
+				@media (min-width: 780px) and (max-width: 839px){
+					.developments__button{
+						width: 60%;
+					}	
+				}
+
+				@media (min-width: 768px) and (max-width: 779px){
+					.developments__button{
+						width: 65%;
+					}	
+				}
+			}
+		}
+	}
+
+}
+
+.advantages {
+	display: flex;
+	flex-direction: column;
+
+	.slider {
+		width: 100%;
+		height: 100vh;
+
+		.advantages__title {
+			@include Headline();
+			@include fontSet($desktopTitle,center);
+			color: #fff;
+			@include textShadow();
+			padding-bottom: 2rem;
+			width: 40%;
+			border-bottom: 1px dotted  #eee;
+			margin: 4rem auto 2rem auto;
+			position: relative;
+
+			&::after {
+				content: url('../image/arrowChanged.png');
+				position:absolute;
+				top: 2.7rem;
+				left: 45%;
+			}
+		}
+
+
+		.advantages__box {
+			display: flex;
+			flex-direction: column;
+
+				&-icon {
+					margin: 0rem auto;
+				}
+
+				&-title {
+					@include Title();
+					@include fontSet($desktopTitle,center);
+					color: #353535;
+					@include textShadow();
+					margin-bottom: 2rem;
+				}
+
+				&-subtitle {
+					@include Light();
+					@include fontSet($desktopSubTitle,center);
+					color:#353535;
+					@include textShadow();
+					margin-bottom: 2rem;
+				}
+		}
+
+		.slideClimate {
+			height: 100vh;
+			width: 100%;
+			background: url('../image/water-1246178_1920.jpg') no-repeat;
+			background-size: cover;
+		}
+
+		.slideForecast {
+			width: 100%;
+			height: 100vh;
+			background: url('../image/aerial-area-big-5065Changed.jpg') no-repeat;
+			background-size: cover;
+		}
+
+		.slideWarmth {
+			width: 100%;
+			height: 100vh;
+			background: url('../image/eee.jpeg') no-repeat;
+			background-size: cover;
+		}
+
+		.flickity-button {
+			background: #D4DFE1;
+			opacity: .7;
+			transition: all .3s ease;
+
+			&:hover {
+				background: #E7EDEE;
+				opacity: 1;
+			}
+		}
+
+		.flickity-button-icon {
+			fill: #465A5D;
+		}
+
+		.flickity-prev-next-button.previous {
+		  left: 100px;
+		}
+		.flickity-prev-next-button.next {
+		  right: 100px;
+		}
+	}
+
+}
+
+.footer {
+	background: linear-gradient(to right, #2b5876, #2f5479, #374f7a, #424a79, #4e4376);
+	display: flex;
+	background-size: cover;
+	flex-direction: column;
+	padding: 2.5rem;
+
+
+	&__title {
+		@include Title();
+		@include fontSet($desktopSubTitle, center);
+		color: #fff;
+		@include textShadow();
+		margin: 1rem 0rem;
+	}
+
+
+	&__link {
+		@include Light();
+		@include fontSet(1.5rem, center);
+		display: block;
+		color: #fff;
+		padding: 1rem;
+		margin: 1rem auto;
+		text-decoration: none;
+		opacity: .7;
+		transition: all .3s ease;
+
+		&:hover{
+			opacity: 1;
+		}
+
+		&:focus {
+			opacity: 1;
+		}
+	}
+
+
+	&__info {
+		margin: 1rem auto;
+		.rights {
+			@include Light();
+			@include fontSet(1.2rem, left);
+			color: #fff;
+			padding: 2rem;
+		}
+	}
+}
+
+
+//Mediaqueries
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.header__nav {
+		position: absolute;
+		top: 3rem;
+	}
+
+	.header__main{
+		margin-top: 10rem;
+
+		.main__headline {
+			font-size: 3.1rem;
+			width: 80%;
+			margin: 1rem auto;
+		}
+
+		.main__title{
+			font-size: 2.1rem;
+			width: 75%;
+			margin: 1rem auto;
+			color: #F4F5F5;
+			text-shadow: 0px 0px 4px #8c9398;
+		}
+	}
+
+	.tech__title {
+		width: 50%;
+		font-size: $desktopMinTitle;
+
+		&::after{
+			content: none;
+		}
+	}
+
+	.tech__table {
+
+		&__text {
+			font-size: $desktopMinText;
+		}
+	}
+
+	.developments__desc{
+		.developments__title {
+			font-size: $desktopMinTitle;
+
+			&::after{
+				top: 2.7rem;
+				left: 45%;
+			}
+		}
+
+		.developments__list {
+			&-item{
+				margin: 1rem 0rem;
+				.list-item__text {
+					font-size: $desktopMinText;
+				}
+			}
+		}
+
+	}
+
+	.advantages {
+		.slider {
+
+			.advantages__title {
+				font-size: $desktopMinTitle;
+				border-bottom: 1px dotted #fff;
+				width: 50%;
+
+				&::after {
+					top: 2.7rem;
+					left: 45%;
+				}
+			}
+
+			.advantages__box {
+				&-title {
+					font-size:  $desktopMinTitle;
+				}
+
+				&-subtitle {
+					font-size: $desktopMinSubTitle;
+				}
+			}
+		}
+	}
+
+	.footer {
+		&__title{
+			font-size: $laptopSubTitle;
+		}
+
+		&__buttons {
+			&-item {
+				font-size: $laptopText;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 907px){
+	.oceanModel{
+		.developments__desc {
+			.developments__title {
+					&::after{
+						top: 5.9rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 847px){
+	.dataSystem{
+		.developments__desc {
+			.developments__title {
+					&::after{
+						top: 5.9rem;
+				}
+			}
+		}
+	}
+}
+
+/* Landscape phones and portrait tablets */
+@media (min-width: 550px) and (max-width: 767px) {
+	.header {
+
+		&__nav {
+			position: absolute;
+			top: 1rem;
+			right: .5rem;
+
+			&-icon {
+				svg {
+					width: 50px;
+					height: 50px;
+				}
+
+				.nav__main-fill {
+					fill: $navLinkBgMobile;
+				}
+			}
+
+			.nav__list {
+
+				&-item {
+					background: $navLinkBgMobile;
+					box-shadow: none;
+
+					.nav__list-icon {
+							svg {
+								width: 60px;
+								height: 60px;
+							}
+						}
+
+					.nav__list-link {
+						display: flex;
+						padding: .1rem;
+						transition: all .3s ease;
+
+					}
+
+					&:hover {
+							background: #fafafa;
+							border-radius: .5rem;
+						}
+				}
+			}
+		}
+	}
+
+	.header__main{
+		margin-top: 6rem;
+
+		.main__headline {
+			font-size: 2.9rem;
+			width: 80%;
+			margin: 1rem auto;
+		}
+
+		.main__title{
+			font-size: 2rem;
+			width: 75%;
+			margin: 1rem auto;
+			color: #F4F5F5;
+			text-shadow: 0px 0px 4px #8c9398;
+		}
+	}
+
+
+	.tech {
+		
+		&__icon {
+			svg {
+				width: 100px;
+				height: 100px;
+			}
+		}
+
+		&__title {
+			width: 70%;
+			font-size: $laptopTitle;
+
+			&::after {
+				content: none;
+			}
+		}
+
+		&__table {
+			width: 80%;
+		}
+
+	}
+
+	.developments {
+		padding: 2rem;
+
+		&__item {
+			justify-content: center;
+			padding: 1.5rem;
+
+			&:nth-child(odd) {
+				flex-direction: column;
+			}
+
+			&:nth-child(even){
+				flex-direction: column;
+			}
+
+
+			.developments__anim {
+				margin: 0rem auto;
+
+			}
+
+			.developments__desc {
+				width: 100%;
+				margin: 0rem auto;
+
+				.developments__icon {
+					svg {
+						display: none;
+					}
+				}
+
+
+				.developments__title {
+					font-size: $laptopTitle;
+					margin-bottom: 1.5rem;
+
+					&::after {
+						content: none;
+					}
+				}
+
+				.developments__list {
+					padding: 0rem;
+
+					&-item {
+						margin: 2rem 0rem;
+					}
+
+					.developments__button{
+							width: 50%;
+						}
+				}
+			}
+		}
+	}
+
+	.advantages {
+		height: 100vh;
+
+		.slider {
+
+			.advantages__title {
+				display: none;
+			}
+
+			.flickity-button {
+				width: 40px;
+				height: 40px;
+			}
+
+			.flickity-prev-next-button.previous {
+			  left: 75px;
+			}
+			.flickity-prev-next-button.next {
+			  right: 75px;
+			}
+
+		}
+		
+	}
+
+	.footer {
+		&__title {
+			font-size: $laptopText;
+		}
+
+		&__buttons {
+			margin: .5rem 0rem;
+			flex-wrap: wrap;
+
+			&-item {
+				margin:1rem;
+			}
+		}
+
+		&__info {
+			.rights {
+				font-size: 1.3rem;
+			}
+		}
+	}
+}
+
+
+/* Landscape phones and smaller */
+@media (min-width: 450px) and (max-width: 549px) {
+
+	.header {
+
+		&__nav {
+			top: .5rem;
+			right: .5rem;
+			position: fixed;
+
+			&-icon {
+				svg {
+					width: 60px;
+					height: 60px;
+				}
+			}
+
+			.nav__list {
+				display: none;
+
+				&-item {
+					background: $navLinkBgMobile;
+					box-shadow: none;
+					margin: .1rem;
+
+
+					.nav__list-icon {
+							svg {
+								width: 60px;
+								height: 60px;
+							}
+						}
+
+
+					.nav__list-link {
+						padding: .4rem;
+						transition: all .3s ease;
+
+
+						.nav__list-text {
+							font-size: 1.6rem;
+						}
+						
+					}
+
+					&:hover {
+							background: #fafafa;
+							border-radius: .5rem;
+						}
+				}
+			}
+
+			.navigation__visible{
+				display: block;
+			}
+		}
+	}
+
+	.header__main{
+		margin-top: 13rem;
+
+		.main__headline {
+			font-size: 2.7rem;
+			width: 85%;
+			margin: 1rem auto;
+		}
+
+		.main__title{
+			font-size: 1.9rem;
+			width: 75%;
+			color: #E0E0E0;
+			text-shadow: 1px 1px 2px #989898;
+			margin: 1rem auto;
+		}
+	}
+
+
+	.tech {
+		
+		&__icon {
+			svg {
+				width: 120px;
+				height: 120px;
+			}
+		}
+
+		&__title {
+			width: 80%;
+			font-size: $mobileTitle;
+
+			&::after {
+				content: none;
+			}
+
+		}
+
+		&__table {
+			width: 80%;
+		}
+
+	}
+
+	.developments {
+		padding: 1.5rem 1rem;
+
+		&__item {
+			justify-content: center;
+			
+
+			&:nth-child(odd) {
+				flex-direction: column;
+			}
+
+			&:nth-child(even){
+				flex-direction: column;
+			}
+
+			.developments__anim {
+				margin: 0rem auto;
+					
+			}
+
+			.developments__desc {
+				width: 100%;
+				margin: 0rem auto;
+
+				.developments__icon {
+					svg {
+						display: none;
+					}
+				}
+
+
+				.developments__title {
+					font-size: $laptopTitle;
+					margin-bottom: 1.5rem;
+
+					&::after {
+						content: none;
+					}
+				}
+
+				.developments__list {
+					padding: 0rem;
+
+					&-item {
+						margin: 2rem 0rem;
+					}
+
+					.developments__button{
+						width: 40%;
+					}
+				}
+			}
+		}
+
+	}
+
+	.advantages {
+		height: 100vh;
+
+		.slider {
+
+			.advantages__title {
+				display: none;
+			}
+
+			.flickity-button {
+				width: 40px;
+				height: 40px;
+			}
+
+			.flickity-prev-next-button.previous {
+			  left: 30px;
+			}
+			.flickity-prev-next-button.next {
+			  right: 30px;
+			}
+
+		}
+		
+	}
+
+	.footer {
+		&__title {
+			font-size: $laptopText;
+		}
+
+		&__buttons {
+			margin: .5rem 0rem;
+			flex-wrap: no-wrap;
+			flex-direction: column;
+			
+
+			&-item {
+				margin:.3rem 0rem;
+				border: none;
+			}
+		}
+
+		&__info {
+			.rights {
+				font-size: 1.1rem;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 449px){
+
+	.header {
+
+		.parallax {
+			height: 150vh;
+
+		}
+
+
+		&__nav {
+			top: .5rem;
+			right: .5rem;
+			position: fixed;
+
+			&-icon {
+				svg {
+					width: 60px;
+					height: 60px;
+				}
+			}
+
+			.nav__list {
+				display: none;
+
+				&-item {
+					background: $navLinkBgMobile;
+					box-shadow: none;
+					margin: .1rem 0rem;
+
+					.nav__list-icon {
+							svg {
+								width: 60px;
+								height: 60px;
+							}
+						}
+
+					.nav__list-link {
+						padding: .4rem;
+						transition: all .3s ease;
+
+						.nav__list-text {
+							font-size: 1.7rem;
+						}
+						
+					}
+
+					&:hover {
+							background: #fafafa;
+							border-radius: .5rem;
+						}
+				}
+			}
+
+			.navigation__visible{
+				display: block;
+			}
+		}
+	}
+
+	
+	.header__main{
+		margin-top: 15rem;
+
+		.main__headline {
+			font-size: 2.5rem;
+			width: 90%;
+			margin: 1rem auto;
+		}
+
+		.main__title{
+			font-size: 1.9rem;
+			width: 80%;
+			margin: 1rem auto;
+			color: #F4F5F5;
+			text-shadow: 0px 0px 4px #8c9398;
+		}
+	}
+
+	.tech {
+		padding: 1.5rem;
+		
+		&__icon {
+			svg {
+				width: 120px;
+				height: 120px;
+			}
+		}
+
+		&__title {
+			width: 100%;
+			font-size: $mobileTitle;
+
+			&::after {
+				content: none;
+			}
+
+		}
+
+		&__table {
+			width: 100%;
+
+		}
+	}
+
+	.developments {
+		padding: 1.5rem 1rem;
+		&__item {
+			justify-content: center;
+
+			&:nth-child(odd) {
+				flex-direction: column;
+			}
+
+			&:nth-child(even){
+				flex-direction: column;
+			}
+			
+			.developments__anim {
+				margin: 0rem auto;
+
+				.main{
+					width: 340px;
+				  	height: 340px;
+
+				  		@keyframes moveDown {
+							0% { transform: translateY(0px);}
+							100% { transform: translateY(20px);}
+						}
+
+						@keyframes moveUp {
+							0% { transform: translateY(0px);}
+							100% { transform: translateY(-20px);}
+						}
+
+						@keyframes moveLeft {
+							0% { transform: translateX(0px);}
+							100% { transform: translateX(-20px);}
+						}
+
+
+						@keyframes moveRight {
+							0% { transform: translateX(0px);}
+							100% { transform: translateX(20px);}
+						}
+
+
+				}
+			}
+
+			.developments__desc {
+				width: 100%;
+				margin: 0rem auto;
+
+				.developments__icon {
+					svg {
+						display: none;
+					}
+				}
+
+
+				.developments__title {
+					font-size: $laptopTitle;
+					margin-bottom: 1.5rem;
+
+					&::after {
+						content: none;
+					}
+				}
+
+				.developments__list {
+					padding: 0rem;
+
+					&-item {
+						margin: 2rem 0rem;
+					}
+
+				.developments__button{
+						width: 60%;
+					}
+				}
+			}
+		}
+	}
+
+	.advantages {
+		height: 100vh;
+
+		.slider {
+
+			.advantages__title {
+				display: none;
+			}
+
+			.flickity-button {
+				width: 35px;
+				height: 35px;
+			}
+
+			.flickity-prev-next-button.previous {
+			  left: 15px;
+			}
+			.flickity-prev-next-button.next {
+			  right: 15px;
+			}
+
+		}
+		
+	}
+
+	.footer {
+		&__title {
+			font-size: $laptopText;
+		}
+
+		&__buttons {
+			margin: .5rem 0rem;
+			flex-wrap: no-wrap;
+			flex-direction: column;
+			
+
+			&-item {
+				margin:.3rem 0rem;
+				border: none;
+			}
+		}
+
+
+		&__info {
+			.rights {
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+}
+
+
+@import "team.scss";
+@import "contact.scss";
+@import "projects.scss";
+@import "publications.scss";
+@import "manual.scss";
+@import "development.scss";
+@import "vacancy.scss";
+@import "employee.scss";
+@import "project.scss";
+@import "devPage.scss";
